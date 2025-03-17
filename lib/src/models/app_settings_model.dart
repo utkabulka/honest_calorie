@@ -18,7 +18,7 @@ class AppSettingsModel extends ChangeNotifier {
     prefs = SharedPreferencesAsync();
 
     _themeMode = getThemeModeFromKey(
-        await prefs.getString(PREF_THEME_MODE) ?? PERF_THEME_SYSTEM);
+        await prefs.getString(prefThemeMode) ?? prefThemeSystem);
 
     notifyListeners();
   }
@@ -27,7 +27,7 @@ class AppSettingsModel extends ChangeNotifier {
   ThemeMode get themeMode => _themeMode;
   set themeMode(ThemeMode value) {
     _themeMode = value;
-    prefs.setString(PREF_THEME_MODE, themeModeToPrefKey(_themeMode));
+    prefs.setString(prefThemeMode, themeModeToPrefKey(_themeMode));
     notifyListeners();
   }
 

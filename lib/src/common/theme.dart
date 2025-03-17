@@ -17,18 +17,18 @@ const subtleShadow =
     BoxShadow(color: Colors.black12, offset: Offset(0, 0), blurRadius: 5);
 
 // Prefs
-const String PREF_THEME_MODE = "themeMode";
-const String PERF_THEME_SYSTEM = "system";
-const String PERF_THEME_LIGHT = "light";
-const String PERF_THEME_DARK = "dark";
+const String prefThemeMode = "themeMode";
+const String prefThemeSystem = "system";
+const String prefThemeLight = "light";
+const String prefThemeDark = "dark";
 
 ThemeMode getThemeModeFromKey(String key) {
   switch (key) {
-    case PERF_THEME_LIGHT:
+    case prefThemeLight:
       return ThemeMode.light;
-    case PERF_THEME_DARK:
+    case prefThemeDark:
       return ThemeMode.dark;
-    case PERF_THEME_SYSTEM:
+    case prefThemeSystem:
     default:
       return ThemeMode.system;
   }
@@ -37,10 +37,10 @@ ThemeMode getThemeModeFromKey(String key) {
 String themeModeToPrefKey(ThemeMode themeMode) {
   switch (themeMode) {
     case ThemeMode.light:
-      return PERF_THEME_LIGHT;
+      return prefThemeLight;
     case ThemeMode.dark:
-      return PERF_THEME_DARK;
+      return prefThemeDark;
     case ThemeMode.system:
-      return PERF_THEME_SYSTEM;
+      return prefThemeSystem;
   }
 }

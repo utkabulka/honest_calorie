@@ -3,7 +3,6 @@ Copyright (C) 2025 Nicole Zubina
 
 Full notice can be found at /lib/main.dart file. */
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:honest_calorie/src/common/constants.dart';
 import 'package:honest_calorie/src/models/profile_model.dart';
@@ -120,13 +119,13 @@ class _ProfilePageState extends State<ProfilePage> {
                       SimpleDialogOption(
                         child: const Text("Female"),
                         onPressed: () {
-                          Navigator.pop<String>(context, GENDER_FEMALE);
+                          Navigator.pop<String>(context, genderFemale);
                         },
                       ),
                       SimpleDialogOption(
                         child: const Text("Male"),
                         onPressed: () {
-                          Navigator.pop<String>(context, GENDER_MALE);
+                          Navigator.pop<String>(context, genderMale);
                         },
                       ),
                       SimpleDialogOption(

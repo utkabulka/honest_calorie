@@ -53,4 +53,11 @@ class FoodModel {
 
     return readPresetFoods;
   }
+
+  /// Creates a JSON file containing all the non-preset food
+  /// and returns a path to it.
+  Future<String> getFoodsJson() {
+    // TODO: implement JSON file generation
+    return Future.value("");
+  }
 }

@@ -19,9 +19,9 @@ class Profile {
   IconData getGenderIconData() {
     if (gender != null) {
       switch (gender) {
-        case GENDER_FEMALE:
+        case genderFemale:
           return Icons.female;
-        case GENDER_MALE:
+        case genderMale:
           return Icons.male;
         default:
           return Icons.question_mark;
@@ -33,9 +33,9 @@ class Profile {
   String getGenderName() {
     if (gender != null) {
       switch (gender) {
-        case GENDER_FEMALE:
+        case genderFemale:
           return "Female";
-        case GENDER_MALE:
+        case genderMale:
           return "Male";
         default:
           return "Unset";
