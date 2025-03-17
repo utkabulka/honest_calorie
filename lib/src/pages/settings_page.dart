@@ -4,6 +4,7 @@ Copyright (C) 2025 Nicole Zubina
 Full notice can be found at /lib/main.dart file. */
 
 import 'package:flutter/material.dart';
+import 'package:honest_calorie/src/pages/dev_tools_page.dart';
 import 'package:provider/provider.dart';
 import 'package:honest_calorie/src/models/app_settings_model.dart';
 
@@ -70,6 +71,16 @@ class _SettingsPageState extends State<SettingsPage> {
                 value: appSettingsModel.relativeDates,
                 onChanged: null,
               )),
+          ListTile(
+            leading: const Icon(Icons.bug_report),
+            title: const Text("Dev tools"),
+            subtitle: const Text("Open developer's tools menu"),
+            onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const DevToolsPage(),
+                )),
+          ),
           ListTile(
             leading: const Icon(Icons.info_outline),
             title: const Text("About"),

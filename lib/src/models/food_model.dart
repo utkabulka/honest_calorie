@@ -26,7 +26,7 @@ class FoodModel {
 
   Future init() async {
     var responses =
-        await Future.wait([DBSingleton.instance.database, getPresetFoods()]);
+        await Future.wait([DBSingleton.instance.database, _readPresetFoods()]);
 
     db = responses[0] as Database;
     _presetFoods = responses[1] as List<Food>;
@@ -37,7 +37,8 @@ class FoodModel {
     return _presetFoods;
   }
 
-  Future<List<Food>> getPresetFoods() async {
+  /// Returns a list of preset food, read from a JSON file in the assets folder.
+  Future<List<Food>> _readPresetFoods() async {
     List<Food> readPresetFoods = List.empty(growable: true);
 
     var foodsJson = await rootBundle.loadString('assets/data/foods.json');
