@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Apple",
+    "calories": 72,
+    "protein": 0.36,
+    "fat": 0.23,
+    "totalCarbs": 19.06,
+    "sugars": 14.34,
+    "fiber": 3.3
+  },
+  {
+    "name": "Egg",
+    "calories": 74,
+    "protein": 6.29,
+    "fat": 4.97,
+    "totalCarbs": 0.38,
+    "sugars": 0.38,
+    "fiber": 0
+  }
+]

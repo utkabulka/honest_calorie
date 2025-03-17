@@ -20,10 +20,6 @@ class _FoodPageState extends State<FoodPage> {
 
   static const double filtersHeight = 80;
 
-  Future<List<Food>> getFoods() async {
-    return await foodModel.getPresetFoods();
-  }
-
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
@@ -35,7 +31,7 @@ class _FoodPageState extends State<FoodPage> {
     return Stack(
       children: [
         FutureBuilder(
-          future: getFoods(),
+          future: foodModel.getFoodFiltered(),
           builder: (context, snapshot) {
             List<Widget> children;
             if (snapshot.hasData) {
