@@ -9,8 +9,18 @@ part 'food.g.dart';
 
 @JsonSerializable(includeIfNull: false)
 class Food {
-  Food();
-  Food.fromName(this.name);
+  Food({
+    this.name = "Unnamed food",
+    this.calories = 0,
+    this.protein,
+    this.fat,
+    this.totalCarbs,
+    this.sugars,
+    this.fiber,
+  });
+
+  factory Food.fromJson(Map<String, dynamic> json) => _$FoodFromJson(json);
+  Map<String, dynamic> toJson() => _$FoodToJson(this);
 
   String name = "Unnamed food";
   int calories = 0;
@@ -28,12 +38,4 @@ class Food {
   String getTextCalorieSummary() {
     return '${calories.toString()} kcal per 100 grams';
   }
-
-  static Food getRandomFood() {
-    Food food = Food();
-    return food;
-  }
-
-  factory Food.fromJson(Map<String, dynamic> json) => _$FoodFromJson(json);
-  Map<String, dynamic> toJson() => _$FoodToJson(this);
 }
