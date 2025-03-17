@@ -15,8 +15,10 @@ class FoodModel {
 
   late List<Food> _presetFoods;
 
+  late Future initFuture;
+
   FoodModel() {
-    init();
+    initFuture = init();
     if (kDebugMode) {
       print("Food model initialized");
     }
@@ -30,8 +32,9 @@ class FoodModel {
     _presetFoods = responses[1] as List<Food>;
   }
 
-  Future<List<Food>> getFoodFiltered({String? name}) {
-    return Future.value(_presetFoods);
+  Future<List<Food>> getFoodFiltered({String? name}) async {
+    await Future.wait([initFuture]);
+    return _presetFoods;
   }
 
   Future<List<Food>> getPresetFoods() async {
